@@ -24,7 +24,14 @@ public class TripulantCabina {
     private LocalTime horesVol;
     private String rang;
     private int barres;
-
+    
+    public TripulantCabina (String pPassaport, String pNom, short pEdat, LocalTime pHoresVol, String pRang) {
+        passaport=pPassaport;
+        nom=pNom;
+        edat=pEdat;
+        horesVol=pHoresVol;
+        rang=pRang;
+    }
     /*
      CONSTRUCTOR
      Paràmetres: valors per tots els atributs de la classe menys dataAlta i barres.
