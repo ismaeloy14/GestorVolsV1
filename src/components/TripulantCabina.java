@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class TripulantCabina {
 
-    private final static Scanner DADES = new Scanner(System.in);
+    private static Scanner DADES = new Scanner(System.in);
 
     private String passaport;
     private String nom;
@@ -47,6 +47,51 @@ public class TripulantCabina {
     /*
     Mètodes accessors
      */
+    public String getPassaport() {
+        return passaport;
+    }
+    public String getNom() {
+        return nom;
+    }
+    public int getEdat() {
+        return edat;
+    }
+    public Date getDataAlta() {
+        return dataAlta;
+    }
+    public LocalTime getHoresVol() {
+        return horesVol;
+    }
+    public String getRang() {
+        return rang;
+    }
+    public int getBarres() {
+        return barres;
+    }
+    public static void setDADES(Scanner aDADES) {
+        DADES = aDADES;
+    }
+    public void setPassaport(String passaport) {
+        this.passaport = passaport;
+    }
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+    public void setEdat(int edat) {
+        this.edat = edat;
+    }
+    public void setDataAlta(Date dataAlta) {
+        this.dataAlta = dataAlta;
+    }
+    public void setHoresVol(LocalTime horesVol) {
+        this.horesVol = horesVol;
+    }
+    public void setRang(String rang) {
+        this.rang = rang;
+    }
+    public void setBarres(int barres) {
+        this.barres = barres;
+    }
     
 
     /*
@@ -102,13 +147,13 @@ public class TripulantCabina {
     }
 
     public void mostrarTripulantCabina() {
-        System.out.println("\nLes dades del tripulant de cabina amb passaport " + passaport + " són:");
-        System.out.println("\nNom: " + nom);
-        System.out.println("\nEdat: " + edat);
-        System.out.println("\nData d'alta: " + new SimpleDateFormat("dd-MM-yyyy").format(dataAlta));
-        System.out.println("\nHores de vol: " + horesVol.getHour() + ":" + horesVol.getMinute());
-        System.out.println("\nRang: " + rang);
-        System.out.println("\nBarres: " + barres);
+        System.out.println("\nLes dades del tripulant de cabina amb passaport " + getPassaport() + " són:");
+        System.out.println("\nNom: " + getNom());
+        System.out.println("\nEdat: " + getEdat());
+        System.out.println("\nData d'alta: " + new SimpleDateFormat("dd-MM-yyyy").format(getDataAlta()));
+        System.out.println("\nHores de vol: " + getHoresVol().getHour() + ":" + getHoresVol().getMinute());
+        System.out.println("\nRang: " + getRang());
+        System.out.println("\nBarres: " + getBarres());
     }
 
     /*
@@ -122,6 +167,10 @@ public class TripulantCabina {
      */
     public int assignarBarres(String pRang) {
 
+    }
+
+    public static Scanner getDADES() {
+        return DADES;
     }
 
 }
