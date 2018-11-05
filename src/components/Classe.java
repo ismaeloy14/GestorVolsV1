@@ -6,6 +6,9 @@
 package components;
 
 
+import java.util.Scanner;
+
+
 /**
  *
  * @author root
@@ -37,7 +40,13 @@ public class Classe {
         return capacitat;
     }
     
-    
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setCapacitat(int capacitat) {
+        this.capacitat = capacitat;
+    }
 
     /*
     Paràmetres: cap
@@ -49,7 +58,15 @@ public class Classe {
     Retorn: La nova classe.
      */
     public static Classe novaClasse() {
-        Avio nouAvio = new Avio(String codi, String fabricant, String model, int capacitat);
+        Scanner dades= new Scanner(System.in);
+        String codi,fabricant,model;
+        int capacitat;
+        
+        do{
+        System.out.println("Digueu-me el codi de l'avió: ");
+        codi = i;
+        }while(codi.length()==3);
+        Avio nouAvio = new Avio(codi,fabricant,model,capacitat);
     }
 
     /*
@@ -66,7 +83,9 @@ public class Classe {
     }
 
     public void mostrarClasse() {
-        System.out.println("\nLa classe " + nom + " té una capacitat de "+capacitat);
+        System.out.println("\nLa classe " + getNom() + " té una capacitat de "+getCapacitat());
     }
+
+    
     
 }
