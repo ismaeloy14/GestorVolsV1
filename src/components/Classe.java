@@ -21,12 +21,23 @@ public class Classe {
      Accions:
      - Assignar als atributs els valors passats com a paràmetres.
      */
-    
+    public Classe(String nom,int capacitat){
+        this.nom = nom;
+        this.capacitat = capacitat;
+    }
 
     /*
     Mètodes accessors    
     */
-   
+    public String getNom(){
+        return nom;
+    }
+    
+    public int getCapacitat(){
+        return capacitat;
+    }
+    
+    
 
     /*
     Paràmetres: cap

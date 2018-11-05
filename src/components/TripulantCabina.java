@@ -25,11 +25,12 @@ public class TripulantCabina {
     private String rang;
     private int barres;
     
-    public TripulantCabina (String rRefencia, String rTitol, short rAnyPublicacio, short rNumero) {
-        refencia=rRefencia;
-        titol=rTitol;
-        anyPublicacio=rAnyPublicacio;
-        numero=rNumero;
+    public TripulantCabina (String pPassaport, String pNom, short pEdat, LocalTime pHoresVol, String pRang) {
+        passaport=pPassaport;
+        nom=pNom;
+        edat=pEdat;
+        horesVol=pHoresVol;
+        rang=pRang;
     }
     /*
      CONSTRUCTOR
