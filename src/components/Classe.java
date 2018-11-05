@@ -58,15 +58,21 @@ public class Classe {
     Retorn: La nova classe.
      */
     public static Classe novaClasse() {
-        Scanner dades= new Scanner(System.in);
+        Scanner in= new Scanner(System.in);
         String codi,fabricant,model;
         int capacitat;
         
         do{
-        System.out.println("Digueu-me el codi de l'avió: ");
-        codi = i;
+            System.out.println("Digueu-me el codi de l'avió: ");
+            codi = in.next();
         }while(codi.length()==3);
+        System.out.println("Digeu-me el fabricant: "); fabricant = in.nextLine();
+        System.out.println("Digeu-me el model"); model = in.nextLine();
+        System.out.println("Digeu-me la capacitat"); capacitat = in.nextInt();
+        
         Avio nouAvio = new Avio(codi,fabricant,model,capacitat);
+        
+        return nouAvio;
     }
 
     /*
