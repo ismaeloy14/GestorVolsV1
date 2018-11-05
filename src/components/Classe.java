@@ -49,7 +49,7 @@ public class Classe {
     Retorn: La nova classe.
      */
     public static Classe novaClasse() {
-        
+        Avio nouAvio = new Avio(String codi, String fabricant, String model, int capacitat);
     }
 
     /*
