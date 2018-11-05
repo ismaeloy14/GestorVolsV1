@@ -27,7 +27,14 @@ public class Avio {
      - Inicialitzar el vector classes com a buit i una longitud de 4.
      - Inicialitzar l'atribut possicioClasses a 0.
      */
-  
+    public Avio(String codi, String fabricant, String model, int capacitat){
+        this.codi=codi;
+        this.fabricant=fabricant;
+        this.model=model;
+        this.capacitat=capacitat;
+        classes = new Classe[4];
+        posicioClasses=0;
+    }
 
     /*
     Mètodes accessors
