@@ -25,13 +25,6 @@ public class TripulantCabina {
     private String rang;
     private int barres;
     
-    public TripulantCabina (String pPassaport, String pNom, short pEdat, LocalTime pHoresVol, String pRang) {
-        passaport=pPassaport;
-        nom=pNom;
-        edat=pEdat;
-        horesVol=pHoresVol;
-        rang=pRang;
-    }
     /*
      CONSTRUCTOR
      Paràmetres: valors per tots els atributs de la classe menys dataAlta i barres.
@@ -40,6 +33,15 @@ public class TripulantCabina {
      - Inicialitzar l'atribut dataAlta amb l'hora actual del sistema.
      - Inicialitzar l'atribut barres mitjançant el mètode pertinent d'aquesta classe.
      */
+    public TripulantCabina (String pPassaport, String pNom, short pEdat, LocalTime pHoresVol, String pRang) {
+        passaport=pPassaport;
+        nom=pNom;
+        edat=pEdat;
+        horesVol=pHoresVol;
+        rang=pRang;
+        dataAlta=new Date();
+        barres=assignarBarres(rang);
+    }
 
 
     /*
