@@ -12,6 +12,7 @@ package components;
 public class RutaNacional {
     
     private String codi;
+    private String pais;
     private String aeroportOri;
     private String aeroportDes;
     private double distancia;
