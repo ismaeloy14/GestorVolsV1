@@ -58,15 +58,13 @@ public class Classe {
     Retorn: La nova classe.
      */
     public static Classe novaClasse() {
-        Scanner dades= new Scanner(System.in);
-        String codi,fabricant,model;
+        Scanner in= new Scanner(System.in);
+        String nom;
         int capacitat;
-        
-        do{
-        System.out.println("Digueu-me el codi de l'avió: ");
-        codi = i;
-        }while(codi.length()==3);
-        Avio nouAvio = new Avio(codi,fabricant,model,capacitat);
+        System.out.println("Digeu-me el nom de la classe: "); nom = in.nextLine();
+        System.out.println("Digeu-me la capacitat"); capacitat = in.nextInt();
+        Classe newClasse = new Classe(nom,capacitat);
+        return newClasse;
     }
 
     /*
@@ -79,7 +77,21 @@ public class Classe {
      Retorn: cap
      */
     public void modificarClasse() {
-
+        Scanner in= new Scanner(System.in);
+        String nom;
+        int capacitat;
+        
+        
+        System.out.println("Nom de la classe: "+getNom());
+        System.out.println("Capacitat de la classe: "+getCapacitat());
+        System.out.println("");
+        System.out.println("MODIFICACIÓ DE LA CLASSE");
+        System.out.println("Digeu-me el nom de la classe: "); nom = in.nextLine();
+        setNom(nom);
+        System.out.println("Digeu-me la capacitat"); capacitat = in.nextInt();
+        setCapacitat(capacitat);
+    
+        
     }
 
     public void mostrarClasse() {
