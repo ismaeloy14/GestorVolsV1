@@ -4,6 +4,8 @@
  */
 package components;
 
+import java.util.Scanner;
+
 
 
 /**
@@ -39,7 +41,50 @@ public class Avio {
     /*
     Mètodes accessors
      */
+    public String getCodi(){
+        return codi;
+    }
+    public String getFabricant(){
+        return fabricant;
+    }
+    public String getModel(){
+        return model;
+    }
+    public int getCapacitat(){
+        return capacitat;
+    }
+    public int getPosicioClasses(){
+        return posicioClasses;
+    }
+    public Classe[] getClasses(){
+        return classes;
+    }
+    
+    
+    public void setCodi(String codi) {
+        this.codi = codi;
+    }
 
+    public void setFabricant(String fabricant) {
+        this.fabricant = fabricant;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setCapacitat(int capacitat) {
+        this.capacitat = capacitat;
+    }
+
+    public void setClasses(Classe[] classes) {
+        Avio.classes = classes;
+    }
+
+    public void setPosicioClasses(int posicioClasses) {
+        this.posicioClasses = posicioClasses;
+    }
+    
 
     /*
     Paràmetres: cap
@@ -51,7 +96,21 @@ public class Avio {
     Retorn: El nou avió.
      */
     public static Avio nouAvio() {
+        Scanner in= new Scanner(System.in);
+        String codi, fabricant, model;
+        int capacitat, posicioClasses;
+        Classe[] classes;
         
+        do{
+        System.out.println("Digueu-me el codi de l'avió: "); codi = in.next();
+        }while(codi.length()!=3);
+        System.out.println("Digueu-me el fabricant de l'avió: "); fabricant = in.nextLine();
+        System.out.println("Digueu-me el model de l'avió: "); model = in.nextLine();
+        System.out.println("Digueu-me la capacitat de l'avió: "); capacitat = in.nextInt();
+
+        Avio newAvio = new Avio(codi,fabricant,model,capacitat);
+        
+        return newAvio;
     }
 
     /*
@@ -64,7 +123,28 @@ public class Avio {
      Retorn: cap
      */
     public void modificarAvio() {
-
+        Scanner in= new Scanner(System.in);
+        String codi, fabricant, model;
+        int capacitat, posicioClasses;
+        
+        System.out.println("Codi de l'avió: "+getCodi());
+        System.out.println("Fabricant de l'avió: "+getFabricant());
+        System.out.println("Model de l'avió: "+getModel());
+        System.out.println("Capacitat de l'avió: "+getCapacitat());
+        System.out.println("");
+        System.out.println("MODIFICACIÓ DE L'AVIÓ");
+        System.out.println("");
+        
+        do{
+            System.out.println("Digueu-me el codi de l'avió: "); codi = in.next();
+        }while(codi.length()!=3);
+        setCodi(codi);
+        System.out.println("Digueu-me el fabricant de l'avió: "); fabricant = in.nextLine();
+        setFabricant(fabricant);
+        System.out.println("Digueu-me el model de l'avió: "); model = in.nextLine();
+        setModel(model);
+        System.out.println("Digueu-me la capacitat de l'avió: "); capacitat = in.nextInt();
+        setCapacitat(capacitat);
     }
 
     public void mostrarAvio() {
@@ -89,7 +169,11 @@ public class Avio {
      Retorn: cap
      */
     public void afegirClasse() {
-
+        Classe novaClasse = new Classe();
+        
+        Avio novaClasseAvio = new Avio(codi,fabricant,model,capacitat);
+        this.classes[this.posicioClasses]=novaClasseAvio;
+        
     }
 
     public int seleccionarClasse(String nom) {
