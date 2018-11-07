@@ -40,7 +40,7 @@ public class TripulantCabina {
         horesVol=pHoresVol;
         rang=pRang;
         dataAlta=new Date();
-        barres=assignarBarres(rang);
+        assignarBarres(rang);
     }
 
 
@@ -115,7 +115,27 @@ public class TripulantCabina {
     Retorn: El nou tripulant de cabina.
      */
     public static TripulantCabina nouTripulantCabina() {
+        Scanner in = new Scanner(System.in);
+        String passaport;
+        String nom;
+        short edat;
+        LocalTime horesVol;
+        int h, m; // hores i minuts
+        String rang;
         
+        System.out.print("Nou tripulant de cabina: ");
+        System.out.print("\nDigueu-me el passaport: "); passaport = in.next();
+        System.out.print("\nDigueu-me el nom: "); nom = in.nextLine();
+        System.out.print("\nDigueu-me l'edat: "); edat = in.nextShort();
+        System.out.print("\nDigueu-me les hores i minuts de vol: ");
+        h = in.nextInt(); System.out.print(":"); m = in.nextInt();
+        horesVol = LocalTime.of(h, m);
+        System.out.println(horesVol);
+        System.out.print("\nDigueu-me el rang: "); rang = in.next();
+        
+        TripulantCabina newTripulantCabina = new TripulantCabina(passaport, nom, edat, horesVol, rang);
+        
+        return newTripulantCabina;
     }
 
     /*
@@ -173,4 +193,10 @@ public class TripulantCabina {
         return DADES;
     }
 
+
+    
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        LocalTime horesVol;
+    }
 }
