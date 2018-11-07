@@ -51,7 +51,7 @@ public class Classe {
     /*
     Paràmetres: cap
     Accions:
-    - Demanar a l'usuari les dades per consola per crear una nova classe d'avió. 
+    - Demanar a l'usuari les dades per consola per crear una nova classe de l'avió. 
       Les dades a demanar són les que necessita el constructor.
     - També heu de tenir en compte que el nom, no té perquè estar formt per una única
     paraula, per exemple, Turista Preferent.
