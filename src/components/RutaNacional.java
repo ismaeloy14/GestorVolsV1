@@ -89,7 +89,7 @@ public class RutaNacional {
         String codi, aeroportOri,aeroportDes,pais;
         double distancia;
         
-        System.out.println("Digueu-me el codi de la ruta internacional: "); codi = in.next();
+        System.out.println("Digueu-me el codi de la ruta nacional: "); codi = in.next();
         System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = in.nextLine();
         System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = in.nextLine();
         System.out.println("Digueu-me el país: "); pais = in.nextLine();
@@ -119,7 +119,7 @@ public class RutaNacional {
         mostrarRutaNacional();
         System.out.println("");
         System.out.println("VALOS A MODIFICAR");
-        System.out.println("Digueu-me el codi de la ruta intercontinental: "); codi = in.next();
+        System.out.println("Digueu-me el codi de la ruta nacional: "); codi = in.next();
         System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = in.nextLine();
         System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = in.nextLine();
         System.out.println("Digueu-me el país origen: "); pais = in.nextLine();

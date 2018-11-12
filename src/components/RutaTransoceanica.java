@@ -5,6 +5,8 @@
  */
 package components;
 
+import java.util.Scanner;
+
 /**
  *
  * @author root
@@ -27,12 +29,92 @@ public class RutaTransoceanica {
      Accions:
      - Assignar als atributs els valors passats com a paràmetres.
      */
-    
+    public RutaTransoceanica(String Codi,String AeroportOri,String AeroportDes,String PaisOri,String PaisDes,String ContinentOri,String ContinentDes,String Ocea,double Distancia){
+        codi = Codi;
+        aeroportOri = AeroportOri;
+        aeroportDes = AeroportDes;
+        paisOri = PaisOri;
+        paisDes = PaisDes;
+        continentOri = ContinentOri;
+        continentDes = ContinentDes;
+        ocea = Ocea;
+        distancia = Distancia;
+    }
     
     /*
     Mètodes accessors
     */
-    
+    public String getCodi() {
+        return codi;
+    }
+
+    public String getAeroportOri() {
+        return aeroportOri;
+    }
+
+    public String getAeroportDes() {
+        return aeroportDes;
+    }
+
+    public String getPaisOri() {
+        return paisOri;
+    }
+
+    public String getPaisDes() {
+        return paisDes;
+    }
+
+    public String getContinentOri() {
+        return continentOri;
+    }
+
+    public String getContinentDes() {
+        return continentDes;
+    }
+
+    public String getOcea() {
+        return ocea;
+    }
+
+    public double getDistancia() {
+        return distancia;
+    }
+
+    public void setCodi(String codi) {
+        this.codi = codi;
+    }
+
+    public void setAeroportOri(String aeroportOri) {
+        this.aeroportOri = aeroportOri;
+    }
+
+    public void setAeroportDes(String aeroportDes) {
+        this.aeroportDes = aeroportDes;
+    }
+
+    public void setPaisOri(String paisOri) {
+        this.paisOri = paisOri;
+    }
+
+    public void setPaisDes(String paisDes) {
+        this.paisDes = paisDes;
+    }
+
+    public void setContinentOri(String continentOri) {
+        this.continentOri = continentOri;
+    }
+
+    public void setContinentDes(String continentDes) {
+        this.continentDes = continentDes;
+    }
+
+    public void setOcea(String ocea) {
+        this.ocea = ocea;
+    }
+
+    public void setDistancia(double distancia) {
+        this.distancia = distancia;
+    }
     
    /*
     Paràmetres: cap
@@ -43,7 +125,23 @@ public class RutaTransoceanica {
     per una única paraula, per exemple, El Prat i Regne Unit.
      */
     public static RutaTransoceanica novaRutaTransoceanica() {
-
+        Scanner in= new Scanner(System.in);
+        String codi, aeroportOri,aeroportDes,paisOri,paisDes,continentOri,continentDes,ocea;
+        double distancia;
+        
+        System.out.println("Digueu-me el codi de la ruta transoceànica: "); codi = in.next();
+        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = in.nextLine();
+        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = in.nextLine();
+        System.out.println("Digueu-me el país origen: "); paisOri = in.nextLine();
+        System.out.println("Digueu-me el país destí: "); paisDes = in.nextLine();
+        System.out.println("Digueu-me el continent origen: "); continentOri = in.nextLine();
+        System.out.println("Digueu-me el continent destí: "); continentDes = in.nextLine();
+        System.out.println("Digueu-me el ocà per on passa: "); ocea = in.nextLine();
+        System.out.println("Digueu-me la distància: "); distancia = in.nextDouble();
+        
+        RutaTransoceanica newRutaTransoceanica = new RutaTransoceanica(codi,aeroportOri,aeroportDes,paisOri,paisDes,continentOri,continentDes,ocea,distancia);
+        
+        return newRutaTransoceanica;
     }
 
     /*
@@ -57,19 +155,47 @@ public class RutaTransoceanica {
      Retorn: cap
      */
     public void modificarRutaTransoceanica() {
-
+        Scanner in= new Scanner(System.in);
+        String codi, aeroportOri,aeroportDes,paisOri,paisDes,continentOri,continentDes,ocea;
+        double distancia;
+        
+        System.out.println("VALORS ACTUALS");
+        mostrarRutaTransoceanica();
+        System.out.println("");
+        System.out.println("VALOS A MODIFICAR");
+        System.out.println("Digueu-me el codi de la ruta intercontinental: "); codi = in.next();
+        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = in.nextLine();
+        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = in.nextLine();
+        System.out.println("Digueu-me el país origen: "); paisOri = in.nextLine();
+        System.out.println("Digueu-me el país destí: "); paisDes = in.nextLine();
+        System.out.println("Digueu-me el continent origen: "); continentOri = in.nextLine();
+        System.out.println("Digueu-me el continent destí: "); continentDes = in.nextLine();
+        System.out.println("Digueu-me el ocà per on passa: "); ocea = in.nextLine();
+        System.out.println("Digueu-me la distància: "); distancia = in.nextDouble();
+        
+        setCodi(codi);
+        setAeroportOri(aeroportOri);
+        setAeroportDes(aeroportDes);
+        setPaisOri(paisOri);
+        setPaisDes(paisDes);
+        setContinentOri(continentOri);
+        setContinentDes(continentDes);
+        setOcea(ocea);
+        setDistancia(distancia);
     }
 
     public void mostrarRutaTransoceanica() {
-        System.out.println("\nLes dades de la ruta transoceànica amb codi " + codi + " són:");
-        System.out.println("\nAeroport d'origen: " + aeroportOri);
-        System.out.println("\nAeroport de destí: " + aeroportDes);
-        System.out.println("\nPaís d'origen: " + paisOri);
-        System.out.println("\nPaís de destí: " + paisDes);
-        System.out.println("\nContinent d'origen: " + continentOri);
-        System.out.println("\nContinent de destí: " + continentDes);
-        System.out.println("\nOceà que sobrevola: " + ocea);
-        System.out.println("\nDistància: " + distancia);
+        System.out.println("\nLes dades de la ruta transoceànica amb codi " + getCodi() + " són:");
+        System.out.println("\nAeroport d'origen: " + getAeroportOri());
+        System.out.println("\nAeroport de destí: " + getAeroportDes());
+        System.out.println("\nPaís d'origen: " + getPaisOri());
+        System.out.println("\nPaís de destí: " + getPaisDes());
+        System.out.println("\nContinent d'origen: " + getContinentOri());
+        System.out.println("\nContinent de destí: " + getContinentDes());
+        System.out.println("\nOceà que sobrevola: " + getOcea());
+        System.out.println("\nDistància: " + getDistancia());
     }
+
+    
 }
 
