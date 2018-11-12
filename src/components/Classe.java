@@ -29,6 +29,7 @@ public class Classe {
         this.capacitat = capacitat;
     }
 
+
     /*
     Mètodes accessors    
     */

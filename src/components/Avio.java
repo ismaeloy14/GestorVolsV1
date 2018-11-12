@@ -98,8 +98,8 @@ public class Avio {
     public static Avio nouAvio() {
         Scanner in= new Scanner(System.in);
         String codi, fabricant, model;
-        int capacitat, posicioClasses;
-        Classe[] classes;
+        int capacitat;
+
         
         do{
         System.out.println("Digueu-me el codi de l'avió: "); codi = in.next();
