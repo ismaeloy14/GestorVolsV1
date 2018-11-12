@@ -78,7 +78,7 @@ public class Avio {
     }
 
     public void setClasses(Classe[] classes) {
-        Avio.classes = classes;
+        this.classes = classes;
     }
 
     public void setPosicioClasses(int posicioClasses) {
@@ -169,10 +169,28 @@ public class Avio {
      Retorn: cap
      */
     public void afegirClasse() {
-        Classe novaClasse = new Classe();
+        Classe classeActual = Classe.novaClasse();
+        int esta;
+        int capacitatUtilitzada=classeActual.getCapacitat();
         
-        Avio novaClasseAvio = new Avio(codi,fabricant,model,capacitat);
-        this.classes[this.posicioClasses]=novaClasseAvio;
+        
+        esta=this.seleccionarClasse(classeActual.getNom());
+        
+        if (esta==-1) {
+            for (int i = 0; i < posicioClasses; i++) {
+                capacitatUtilitzada+=this.classes[i].getCapacitat();
+            }
+            
+            if (capacitatUtilitzada<this.capacitat){
+                this.classes[posicioClasses]=classeActual;
+                posicioClasses++;
+            } else {
+                System.out.println("\nLa classe no s'ha pogut afegir");
+            }
+            
+        }
+        // Avio novaClasseAvio = new Avio(codi,fabricant,model,capacitat);
+        // this.classes[this.posicioClasses]=novaClasseAvio;
         
     }
 
