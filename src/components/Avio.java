@@ -78,7 +78,7 @@ public class Avio {
     }
 
     public void setClasses(Classe[] classes) {
-        Avio.classes = classes;
+        this.classes = classes;
     }
 
     public void setPosicioClasses(int posicioClasses) {
@@ -98,8 +98,8 @@ public class Avio {
     public static Avio nouAvio() {
         Scanner in= new Scanner(System.in);
         String codi, fabricant, model;
-        int capacitat, posicioClasses;
-        Classe[] classes;
+        int capacitat;
+
         
         do{
         System.out.println("Digueu-me el codi de l'avió: "); codi = in.next();
@@ -169,7 +169,11 @@ public class Avio {
      Retorn: cap
      */
     public void afegirClasse() {
-        Classe novaClasse = new Classe();
+        
+        Classe.novaClasse();
+        
+        
+        
         
         Avio novaClasseAvio = new Avio(codi,fabricant,model,capacitat);
         this.classes[this.posicioClasses]=novaClasseAvio;
