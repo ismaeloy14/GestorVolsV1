@@ -4,6 +4,8 @@
  */
 package components;
 
+import java.util.Scanner;
+
 
 /**
  *
@@ -25,13 +27,64 @@ public class RutaInternacional {
      - Assignar als atributs els valors passats com a paràmetres.
      */
     public RutaInternacional(String codi,String aeroportOri,String aeroportDes,String paisOri,String paisDes,double distancia){
-        
+        this.codi = codi;
+        this.aeroportOri = aeroportOri;
+        this.aeroportDes = aeroportDes;
+        this.paisOri = paisOri;
+        this.paisDes = paisDes;
+        this.distancia = distancia;
     }
 
     /*
     Mètodes accessors
      */
-    
+    public String getCodi() {
+        return codi;
+    }
+
+    public String getAeroportOri() {
+        return aeroportOri;
+    }
+
+    public String getAeroportDes() {
+        return aeroportDes;
+    }
+
+    public String getPaisOri() {
+        return paisOri;
+    }
+
+    public String getPaisDes() {
+        return paisDes;
+    }
+
+    public double getDistancia() {
+        return distancia;
+    }
+
+    public void setCodi(String codi) {
+        this.codi = codi;
+    }
+
+    public void setAeroportOri(String aeroportOri) {
+        this.aeroportOri = aeroportOri;
+    }
+
+    public void setAeroportDes(String aeroportDes) {
+        this.aeroportDes = aeroportDes;
+    }
+
+    public void setPaisOri(String paisOri) {
+        this.paisOri = paisOri;
+    }
+
+    public void setPaisDes(String paisDes) {
+        this.paisDes = paisDes;
+    }
+
+    public void setDistancia(double distancia) {
+        this.distancia = distancia;
+    }
 
     /*
     Paràmetres: cap
@@ -42,7 +95,21 @@ public class RutaInternacional {
     paraula, per exemple, El Prat o Regne Unit.
      */
     public static RutaInternacional novaRutaInternacional() {
-       
+        Scanner in= new Scanner(System.in);
+        String codi, aeroportOri,aeroportDes,paisOri,paisDes;
+        double distancia;
+        
+        System.out.println("Digueu-me el codi de la ruta internacional: "); codi = in.next();
+        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = in.nextLine();
+        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = in.nextLine();
+        System.out.println("Digueu-me el país origen: "); paisOri = in.nextLine();
+        System.out.println("Digueu-me el país destí: "); paisDes = in.nextLine();
+        System.out.println("Digueu-me la distància: "); distancia = in.nextDouble();     
+        
+        RutaInternacional newRutaInternacional = new RutaInternacional(codi,aeroportOri,aeroportDes,paisOri,paisDes,distancia);
+        
+        return newRutaInternacional;
+        
     }
 
     /*
@@ -56,15 +123,37 @@ public class RutaInternacional {
      Retorn: cap
      */
     public void modificarRutaInternacional() {
-
+        Scanner in= new Scanner(System.in);
+        String codi, aeroportOri,aeroportDes,paisOri,paisDes;
+        double distancia;
+        
+        System.out.println("VALORS ACTUALS");
+        mostrarRutaInternacional();
+        System.out.println("");
+        System.out.println("VALOS A MODIFICAR");
+        System.out.println("Digueu-me el codi de la ruta intercontinental: "); codi = in.next();
+        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = in.nextLine();
+        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = in.nextLine();
+        System.out.println("Digueu-me el país origen: "); paisOri = in.nextLine();
+        System.out.println("Digueu-me el país destí: "); paisDes = in.nextLine();
+        System.out.println("Digueu-me la distància: "); distancia = in.nextDouble();
+        
+        setCodi(codi);
+        setAeroportOri(aeroportOri);
+        setAeroportDes(aeroportDes);
+        setPaisOri(paisOri);
+        setPaisDes(paisDes);
+        setDistancia(distancia);
     }
 
     public void mostrarRutaInternacional() {
-        System.out.println("\nLes dades de la ruta internacional amb codi " + codi + " són:");
-        System.out.println("\nAeroport d'origen: " + aeroportOri);
-        System.out.println("\nAeroport de destí: " + aeroportDes);
-         System.out.println("\nPaís d'origen: " + paisOri);
-        System.out.println("\nPaís de destí: " + paisDes);
-        System.out.println("\nDistància: " + distancia);
+        System.out.println("\nLes dades de la ruta internacional amb codi " + getCodi() + " són:");
+        System.out.println("\nAeroport d'origen: " + getAeroportOri());
+        System.out.println("\nAeroport de destí: " + getAeroportDes());
+         System.out.println("\nPaís d'origen: " + getPaisOri());
+        System.out.println("\nPaís de destí: " + getPaisDes());
+        System.out.println("\nDistància: " + getDistancia());
     }
+
+    
 }
