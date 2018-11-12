@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @author root
  */
 public class Avio {
-
+    private final static Scanner DADES= new Scanner(System.in);
     private String codi;
     private String fabricant;
     private String model;
@@ -96,17 +96,17 @@ public class Avio {
     Retorn: El nou avió.
      */
     public static Avio nouAvio() {
-        Scanner in= new Scanner(System.in);
+        
         String codi, fabricant, model;
         int capacitat;
 
         
         do{
-        System.out.println("Digueu-me el codi de l'avió: "); codi = in.next();
+        System.out.println("Digueu-me el codi de l'avió: "); codi = DADES.next();
         }while(codi.length()!=3);
-        System.out.println("Digueu-me el fabricant de l'avió: "); fabricant = in.nextLine();
-        System.out.println("Digueu-me el model de l'avió: "); model = in.nextLine();
-        System.out.println("Digueu-me la capacitat de l'avió: "); capacitat = in.nextInt();
+        System.out.println("Digueu-me el fabricant de l'avió: "); fabricant = DADES.nextLine();
+        System.out.println("Digueu-me el model de l'avió: "); model = DADES.nextLine();
+        System.out.println("Digueu-me la capacitat de l'avió: "); capacitat = DADES.nextInt();
 
         Avio newAvio = new Avio(codi,fabricant,model,capacitat);
         
@@ -136,14 +136,14 @@ public class Avio {
         System.out.println("");
         
         do{
-            System.out.println("Digueu-me el codi de l'avió: "); codi = in.next();
+            System.out.println("Digueu-me el codi de l'avió: "); codi = DADES.next();
         }while(codi.length()!=3);
         setCodi(codi);
-        System.out.println("Digueu-me el fabricant de l'avió: "); fabricant = in.nextLine();
+        System.out.println("Digueu-me el fabricant de l'avió: "); fabricant = DADES.nextLine();
         setFabricant(fabricant);
-        System.out.println("Digueu-me el model de l'avió: "); model = in.nextLine();
+        System.out.println("Digueu-me el model de l'avió: "); model = DADES.nextLine();
         setModel(model);
-        System.out.println("Digueu-me la capacitat de l'avió: "); capacitat = in.nextInt();
+        System.out.println("Digueu-me la capacitat de l'avió: "); capacitat = DADES.nextInt();
         setCapacitat(capacitat);
     }
 
