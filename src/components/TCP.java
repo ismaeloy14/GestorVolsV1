@@ -96,7 +96,20 @@ public class TCP {
     cas es considerarà que els segons i nanosegons, sempre són  0.
      */
     public static TCP nouTCP() {
-       
+        String passaport, nom;
+        int edat, hores, minuts;
+        LocalTime horesVol;
+
+        System.out.println("Digueu-me el passaport del TCP: "); passaport = DADES.next();
+        System.out.println("Digueu-me el nom del TCP: "); nom = DADES.nextLine();
+        System.out.println("Digueu-me l'edat del TCP: "); edat = DADES.nextInt();
+        System.out.println("Digueu-me les hores de vol del TCP: "); hores = DADES.nextInt();
+        System.out.println("Digueu-me els minuts de vol del TCP: "); minuts = DADES.nextInt();
+        horesVol=LocalTime.of(hores, minuts, 0, 0);
+        
+        TCP newTCP = new TCP(passaport, nom, edat, horesVol);
+        
+        return newTCP;
     }
 
     /*
@@ -110,10 +123,32 @@ public class TCP {
      de mostrar les hores i minuts.
     
      Retorn: cap
-     *//*
+     */
     public void modificarTCP() {
-
-    }*/
+        String passaport, nom;
+        int edat, hores, minuts;
+        LocalTime horesVol;
+        
+        System.out.println("Passaport del TCP: "+this.getPassaport());
+        System.out.println("Nom del TCP: "+this.getNom());
+        System.out.println("Edat del TCP: "+this.getEdat());
+        System.out.println("Hores i minuts de vol del TCP: "+this.getHoresVol());
+        System.out.println("");
+        System.out.println("MODIFICACIÓ DEL TCP");
+        System.out.println("");
+        
+        
+        System.out.println("Digueu-me el nou passaport del TCP: "); passaport = DADES.next();
+        this.setPassaport(passaport);
+        System.out.println("Digueu-me el nou nom del TCP: "); nom = DADES.nextLine();
+        this.setNom(nom);
+        System.out.println("Digueu-me la nova edat del TCP: "); edat = DADES.nextInt();
+        this.setEdat(edat);
+        System.out.println("Digueu-me les noves hores de vol del TCP: "); hores = DADES.nextInt();
+        System.out.println("Digueu-me els nous minuts de vol del TCP: "); minuts = DADES.nextInt();
+        horesVol=LocalTime.of(hores, minuts, 0, 0);
+        this.setHoresVol(horesVol);
+    }
 
     public void mostrarTCP() {
         System.out.println("\nLes dades del tripulant de cabina amb passaport " + getPassaport() + " són:");
