@@ -111,7 +111,8 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirAvio() {
-
+        this.avions[posicioAvions] = Avio.nouAvio();
+        posicioAvions++;
     }
 
     public int seleccionarAvio() {

@@ -189,8 +189,6 @@ public class Avio {
             }
             
         }
-        // Avio novaClasseAvio = new Avio(codi,fabricant,model,capacitat);
-        // this.classes[this.posicioClasses]=novaClasseAvio;
         
     }
 

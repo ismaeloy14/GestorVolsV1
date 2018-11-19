@@ -30,17 +30,57 @@ public class TCP {
      - Inicialitzar l'atribut rang a null, ja que quan es crea un TCP, mai té rang.
      */
     public TCP(String passaport, String nom, int edat, LocalTime horesVol){
+        Date data = new Date();
+        
         this.passaport = passaport;
         this.nom = nom;
         this.edat = edat;
         this.horesVol = horesVol;
-        this.dataAlta = 
+        this.dataAlta = data;
         this.rang = null;
     }
 
     /*
     Mètodes accessors
      */
+    // Getters //
+    public String getPassaport() {
+        return passaport;
+    }
+    public String getNom() {
+        return nom;
+    }
+    public int getEdat() {
+        return edat;
+    }
+    public Date getDataAlta() {
+        return dataAlta;
+    }
+    public LocalTime getHoresVol() {
+        return horesVol;
+    }
+    public String getRang() {
+        return rang;
+    }
+    // Setters //
+    public void setPassaport(String passaport) {
+        this.passaport = passaport;
+    }
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+    public void setEdat(int edat) {
+        this.edat = edat;
+    }
+    public void setDataAlta(Date dataAlta) {
+        this.dataAlta = dataAlta;
+    }
+    public void setHoresVol(LocalTime horesVol) {
+        this.horesVol = horesVol;
+    }
+    public void setRang(String rang) {
+        this.rang = rang;
+    }
     
 
     /*
@@ -69,18 +109,18 @@ public class TCP {
      de mostrar les hores i minuts.
     
      Retorn: cap
-     */
+     *//*
     public void modificarTCP() {
 
-    }
+    }*/
 
     public void mostrarTCP() {
-        System.out.println("\nLes dades del tripulant de cabina amb passaport " + passaport + " són:");
-        System.out.println("\nNom: " + nom);
-        System.out.println("\nEdat: " + edat);
-        System.out.println("\nData d'alta: " + new SimpleDateFormat("dd-MM-yyyy").format(dataAlta));
-        System.out.println("\nHores de vol: " + horesVol.getHour() + ":" + horesVol.getMinute());
-        System.out.println("\nRang: " + rang);
+        System.out.println("\nLes dades del tripulant de cabina amb passaport " + getPassaport() + " són:");
+        System.out.println("\nNom: " + getNom());
+        System.out.println("\nEdat: " + getEdat());
+        System.out.println("\nData d'alta: " + new SimpleDateFormat("dd-MM-yyyy").format(getDataAlta()));
+        System.out.println("\nHores de vol: " + getHoresVol().getHour() + ":" + getHoresVol().getMinute());
+        System.out.println("\nRang: " + getRang());
     }
 
 }
