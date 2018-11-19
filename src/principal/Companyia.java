@@ -320,7 +320,8 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirRutaNacional() {
-
+        this.rutesNacionals[posicioRutesNacionals] = RutaNacional.novaRutaNacional();
+        posicioRutesNacionals++;
     }
 
     public int seleccionarRutaNacional() {
@@ -351,7 +352,8 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirRutaInternacional() {
-
+        this.rutesInternacionals[posicioRutesInternacionals] = RutaInternacional.novaRutaInternacional();
+        posicioRutesInternacionals++;
     }
 
     public int seleccionarRutaInternacional() {
@@ -382,7 +384,8 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirRutaIntercontinental() {
-
+        this.rutesIntercontinentals[posicioRutesIntercontinentals] = RutaIntercontinental.novaRutaIntercontinental();
+        posicioRutesIntercontinentals++;
     }
 
     public int seleccionarRutaIntercontinental() {
@@ -413,7 +416,8 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirRutaTransoceanica() {
-
+        this.rutesTransoceaniques[posicioRutesTransoceaniques] = RutaTransoceanica.novaRutaTransoceanica();
+        posicioRutesTransoceaniques++;
     }
 
     public int seleccionarRutaTransoceanica() {
@@ -445,7 +449,8 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirTripulantCabina() {
-
+        this.tripulantsCabina[posicioTripulantsCabina] = TripulantCabina.nouTripulantCabina();
+        posicioTripulantsCabina++;
     }
 
     public int seleccionarTripulantCabina() {
@@ -476,7 +481,8 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirTCP() {
-
+        this.tcps[posicioTcps] = TCP.nouTCP();
+        posicioTcps++;
     }
 
     public int seleccionarTCP() {
@@ -507,7 +513,8 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirVol() throws ParseException {
-
+        this.vols[posicioVols] = Vol.nouVol();
+        posicioVols++;
     }
 
     public int seleccionarVol() {
@@ -539,7 +546,7 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirAvioVol() {
-
+        
     }
 
     /*

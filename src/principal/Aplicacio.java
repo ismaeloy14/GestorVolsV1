@@ -5,13 +5,14 @@
 package principal;
 
 import java.text.ParseException;
+import java.util.Scanner;
 
 /**
  *
  * @author root
  */
 public class Aplicacio {
-
+    private final static Scanner DADES= new Scanner(System.in);
     private static Companyia[] companyies = new Companyia[5];
     private static int posicioCompanyies = 0; //La propera posició buida del vector companyies
     private static Companyia companyiaActual = null; //Companyia seleccionada
@@ -177,7 +178,37 @@ public class Aplicacio {
      tècnica de les excepcions que veurem més endavant
      */
     public static void menuAvions() {
-       
+       int opcio = 0;
+
+        do {
+            int pos = -1;
+            System.out.println("\nSelecciona una opció");
+            System.out.println("\n0. Sortir");
+            System.out.println("\n1. Alta avió");
+            System.out.println("\n2. Modificar avió");
+            System.out.println("\n3. Llistat d'avios");
+            
+
+            opcio = DADES.nextInt();
+
+            switch (opcio) {
+                case 0:
+                    break;
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                
+                default:
+                    System.out.println("\nS'ha de seleccionar una opció correcta del menú.");
+                    break;
+            }
+        } while (opcio != 0);
     }
 
     /*
