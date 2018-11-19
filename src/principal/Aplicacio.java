@@ -4,6 +4,7 @@
  */
 package principal;
 
+import components.Avio;
 import java.text.ParseException;
 import java.util.Scanner;
 
@@ -195,13 +196,19 @@ public class Aplicacio {
                 case 0:
                     break;
                 case 1:
-                    
+                    companyiaActual.afegirAvio();
                     break;
                 case 2:
-                    
+                    pos = selectCompanyia();
+                    if (pos >= 0) {
+                        companyiaActual.seleccionarAvio();
+                        
+                    } else {
+                        System.out.println("\nNo existeix cap avió");
+                    }
                     break;
                 case 3:
-                    
+                    companyiaActual.getAvions();
                     break;
                 
                 default:
