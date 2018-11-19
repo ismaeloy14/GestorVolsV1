@@ -115,7 +115,6 @@ public class TripulantCabina {
     Retorn: El nou tripulant de cabina.
      */
     public static TripulantCabina nouTripulantCabina() {
-        Scanner in = new Scanner(System.in);
         String passaport;
         String nom;
         short edat;
@@ -124,14 +123,13 @@ public class TripulantCabina {
         String rang;
         
         System.out.print("Nou tripulant de cabina: ");
-        System.out.print("\nDigueu-me el passaport: "); passaport = in.next();
-        System.out.print("\nDigueu-me el nom: "); nom = in.nextLine();
-        System.out.print("\nDigueu-me l'edat: "); edat = in.nextShort();
+        System.out.print("\nDigueu-me el passaport: "); passaport = DADES.next();
+        System.out.print("\nDigueu-me el nom: "); nom = DADES.nextLine();
+        System.out.print("\nDigueu-me l'edat: "); edat = DADES.nextShort();
         System.out.print("\nDigueu-me les hores i minuts de vol: ");
-        h = in.nextInt(); System.out.print(":"); m = in.nextInt();
+        h = DADES.nextInt(); System.out.print(":"); m = DADES.nextInt();
         horesVol = LocalTime.of(h, m);
-        System.out.println(horesVol);
-        System.out.print("\nDigueu-me el rang: "); rang = in.next();
+        System.out.print("\nDigueu-me el rang: "); rang = DADES.next();
         
         TripulantCabina newTripulantCabina = new TripulantCabina(passaport, nom, edat, horesVol, rang);
         
@@ -163,7 +161,28 @@ public class TripulantCabina {
      Retorn: cap
      */
     public void modificarTripulantCabina() {
-
+        String passaport, nom, rang;
+        short edat;
+        LocalTime horesVol;
+        int h, m; // hores i minuts
+        
+        this.mostrarTripulantCabina();
+        
+        System.out.println("");
+        System.out.println("MODIFICACIÓ DEL TRIPULANT DE CABINA");
+        System.out.println("");
+        
+        System.out.println("Digueu-me el nou passaport del Tripulant de Cabina: "); passaport = DADES.next();
+        this.setPassaport(passaport);
+        System.out.println("Digueu-me el nou nom del Tripulant de Cabina: "); nom = DADES.nextLine();
+        this.setNom(nom);
+        System.out.println("Digueu-me la nova edat del Tripulant de Cabina: "); edat = DADES.nextShort();
+        this.setEdat(edat);
+        System.out.println("Digueu-me les noves hores de vol del Tripulant de Cabina: "); h = DADES.nextInt();
+        System.out.println("Digueu-me els nous minuts de vol del Tripulant de Cabina: "); m = DADES.nextInt();
+        horesVol=LocalTime.of(h, m, 0, 0);
+        this.setHoresVol(horesVol);
+        System.out.print("\nDigueu-me el rang: "); rang = DADES.next();
     }
 
     public void mostrarTripulantCabina() {
@@ -210,10 +229,5 @@ public class TripulantCabina {
 
     public static Scanner getDADES() {
         return DADES;
-    }
-    
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        LocalTime horesVol;
     }
 }
