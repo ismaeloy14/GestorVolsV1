@@ -191,6 +191,19 @@ public class Vol {
      */
     public static Vol nouVol() throws ParseException {
         
+        String codi, durada, FechaSortida;
+        Date dataSortida, dataArribada;
+        LocalTime horaSortida, horaArribada;
+        
+        dataSortida = new Date();
+        
+        do{
+            System.out.println("Digueu-me el codi del vol: "); codi = DADES.next();
+        }while((codi.length()<6) || (codi.length()>7));
+        
+        System.out.println("Digueu-me el dia de sortida del vol: "); 
+        
+        
     }
 
     /*
@@ -233,7 +246,8 @@ public class Vol {
      Retorn: cap
      */
     public void afegirTripulantCabina(TripulantCabina tripulantCabina) {
-
+        this.tripulacioCabina[posicioTripulacioCabina]=tripulantCabina;
+        posicioTripulacioCabina++;
     }
 
     /*
@@ -244,7 +258,8 @@ public class Vol {
      Retorn: cap
      */
     public void afegirTCP(TCP tcp) {
-
+        this.tcps[posicioTcps]=tcp;
+        posicioTcps++;
     }
     
     public void mostrarVol() {
