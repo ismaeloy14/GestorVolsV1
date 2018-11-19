@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author root
  */
 public class RutaIntercontinental {
-
+    private final static Scanner DADES= new Scanner(System.in);
     private String codi;
     private String aeroportOri;
     private String aeroportDes;
@@ -117,18 +117,18 @@ public class RutaIntercontinental {
     per una única paraula, per exemple, El Prat i Regne Unit.
      */
     public static RutaIntercontinental novaRutaIntercontinental() {
-        Scanner in= new Scanner(System.in);
+        
         String codi, aeroportOri,aeroportDes,paisOri,paisDes,continentOri,continentDes;
         double distancia;
         
-        System.out.println("Digueu-me el codi de la ruta intercontinental: "); codi = in.next();
-        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = in.nextLine();
-        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = in.nextLine();
-        System.out.println("Digueu-me el país origen: "); paisOri = in.nextLine();
-        System.out.println("Digueu-me el país destí: "); paisDes = in.nextLine();
-        System.out.println("Digueu-me el continent origen: "); continentOri = in.nextLine();
-        System.out.println("Digueu-me el continent destí: "); continentDes = in.nextLine();
-        System.out.println("Digueu-me la distància: "); distancia = in.nextDouble();
+        System.out.println("Digueu-me el codi de la ruta intercontinental: "); codi = DADES.next();
+        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = DADES.nextLine();
+        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = DADES.nextLine();
+        System.out.println("Digueu-me el país origen: "); paisOri = DADES.nextLine();
+        System.out.println("Digueu-me el país destí: "); paisDes = DADES.nextLine();
+        System.out.println("Digueu-me el continent origen: "); continentOri = DADES.nextLine();
+        System.out.println("Digueu-me el continent destí: "); continentDes = DADES.nextLine();
+        System.out.println("Digueu-me la distància: "); distancia = DADES.nextDouble();
         
         RutaIntercontinental newRutaIntercontinental = new RutaIntercontinental(codi,aeroportOri,aeroportDes,paisOri,paisDes,continentOri,continentDes,distancia);
         
@@ -147,7 +147,7 @@ public class RutaIntercontinental {
      Retorn: cap
      */
     public void modificarRutaIntercontinental() {
-        Scanner in= new Scanner(System.in);
+        
         String codi, aeroportOri,aeroportDes,paisOri,paisDes,continentOri,continentDes;
         double distancia;
         
@@ -155,14 +155,14 @@ public class RutaIntercontinental {
         mostrarRutaIntercontinental();
         System.out.println("");
         System.out.println("VALOS A MODIFICAR");
-        System.out.println("Digueu-me el codi de la ruta intercontinental: "); codi = in.next();
-        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = in.nextLine();
-        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = in.nextLine();
-        System.out.println("Digueu-me el país origen: "); paisOri = in.nextLine();
-        System.out.println("Digueu-me el país destí: "); paisDes = in.nextLine();
-        System.out.println("Digueu-me el continent origen: "); continentOri = in.nextLine();
-        System.out.println("Digueu-me el continent destí: "); continentDes = in.nextLine();
-        System.out.println("Digueu-me la distància: "); distancia = in.nextDouble();
+        System.out.println("Digueu-me el codi de la ruta intercontinental: "); codi = DADES.next();
+        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = DADES.nextLine();
+        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = DADES.nextLine();
+        System.out.println("Digueu-me el país origen: "); paisOri = DADES.nextLine();
+        System.out.println("Digueu-me el país destí: "); paisDes = DADES.nextLine();
+        System.out.println("Digueu-me el continent origen: "); continentOri = DADES.nextLine();
+        System.out.println("Digueu-me el continent destí: "); continentDes = DADES.nextLine();
+        System.out.println("Digueu-me la distància: "); distancia = DADES.nextDouble();
         
         setCodi(codi);
         setAeroportOri(aeroportOri);

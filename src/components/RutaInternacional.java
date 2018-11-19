@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author root
  */
 public class RutaInternacional {
-    
+    private final static Scanner DADES= new Scanner(System.in);
     private String codi;
     private String aeroportOri;
     private String aeroportDes;
@@ -95,16 +95,15 @@ public class RutaInternacional {
     paraula, per exemple, El Prat o Regne Unit.
      */
     public static RutaInternacional novaRutaInternacional() {
-        Scanner in= new Scanner(System.in);
         String codi, aeroportOri,aeroportDes,paisOri,paisDes;
         double distancia;
         
-        System.out.println("Digueu-me el codi de la ruta internacional: "); codi = in.next();
-        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = in.nextLine();
-        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = in.nextLine();
-        System.out.println("Digueu-me el país origen: "); paisOri = in.nextLine();
-        System.out.println("Digueu-me el país destí: "); paisDes = in.nextLine();
-        System.out.println("Digueu-me la distància: "); distancia = in.nextDouble();     
+        System.out.println("Digueu-me el codi de la ruta internacional: "); codi = DADES.next();
+        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = DADES.nextLine();
+        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = DADES.nextLine();
+        System.out.println("Digueu-me el país origen: "); paisOri = DADES.nextLine();
+        System.out.println("Digueu-me el país destí: "); paisDes = DADES.nextLine();
+        System.out.println("Digueu-me la distància: "); distancia = DADES.nextDouble();     
         
         RutaInternacional newRutaInternacional = new RutaInternacional(codi,aeroportOri,aeroportDes,paisOri,paisDes,distancia);
         
@@ -123,7 +122,7 @@ public class RutaInternacional {
      Retorn: cap
      */
     public void modificarRutaInternacional() {
-        Scanner in= new Scanner(System.in);
+        
         String codi, aeroportOri,aeroportDes,paisOri,paisDes;
         double distancia;
         
@@ -131,12 +130,12 @@ public class RutaInternacional {
         mostrarRutaInternacional();
         System.out.println("");
         System.out.println("VALOS A MODIFICAR");
-        System.out.println("Digueu-me el codi de la ruta intercontinental: "); codi = in.next();
-        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = in.nextLine();
-        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = in.nextLine();
-        System.out.println("Digueu-me el país origen: "); paisOri = in.nextLine();
-        System.out.println("Digueu-me el país destí: "); paisDes = in.nextLine();
-        System.out.println("Digueu-me la distància: "); distancia = in.nextDouble();
+        System.out.println("Digueu-me el codi de la ruta intercontinental: "); codi = DADES.next();
+        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = DADES.nextLine();
+        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = DADES.nextLine();
+        System.out.println("Digueu-me el país origen: "); paisOri = DADES.nextLine();
+        System.out.println("Digueu-me el país destí: "); paisDes = DADES.nextLine();
+        System.out.println("Digueu-me la distància: "); distancia = DADES.nextDouble();
         
         setCodi(codi);
         setAeroportOri(aeroportOri);
