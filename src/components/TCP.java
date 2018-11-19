@@ -105,7 +105,7 @@ public class TCP {
         System.out.println("Digueu-me l'edat del TCP: "); edat = DADES.nextInt();
         System.out.println("Digueu-me les hores de vol del TCP: "); hores = DADES.nextInt();
         System.out.println("Digueu-me els minuts de vol del TCP: "); minuts = DADES.nextInt();
-        horesVol=LocalTime.of(hores, minuts, 0, 0);
+        horesVol=LocalTime.of(hores, minuts);
         
         TCP newTCP = new TCP(passaport, nom, edat, horesVol);
         
@@ -146,7 +146,7 @@ public class TCP {
         this.setEdat(edat);
         System.out.println("Digueu-me les noves hores de vol del TCP: "); hores = DADES.nextInt();
         System.out.println("Digueu-me els nous minuts de vol del TCP: "); minuts = DADES.nextInt();
-        horesVol=LocalTime.of(hores, minuts, 0, 0);
+        horesVol=LocalTime.of(hores, minuts);
         this.setHoresVol(horesVol);
     }
 

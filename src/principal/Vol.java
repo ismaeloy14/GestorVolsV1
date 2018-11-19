@@ -191,9 +191,11 @@ public class Vol {
      */
     public static Vol nouVol() throws ParseException {
         
-        String codi, durada, FechaSortida;
+        String codi, durada;
         Date dataSortida, dataArribada;
         LocalTime horaSortida, horaArribada;
+        long milisegonsSortida, milisegonsArribada, milisegonsDurada;
+        int h, m;
         
         dataSortida = new Date();
         
@@ -201,7 +203,35 @@ public class Vol {
             System.out.println("Digueu-me el codi del vol: "); codi = DADES.next();
         }while((codi.length()<6) || (codi.length()>7));
         
-        System.out.println("Digueu-me el dia de sortida del vol: "); 
+        System.out.println("Digueu-me el dia de sortida del vol (dd-MM-yyyy): "); 
+        dataSortida = new SimpleDateFormat("dd-MM-yyyy").parse(new Scanner(System.in).nextLine());
+        
+        System.out.println("Digueu-me la hora de sortida del vol (24H): "); h = DADES.nextInt();
+        System.out.println("Digueu-me el minut de sortida del vol (60min): "); m = DADES.nextInt();
+        horaSortida=LocalTime.of(h, m);
+        
+        System.out.println("Digueu-me el dia d'arribada del vol (dd-MM-yyyy): "); 
+        dataArribada = new SimpleDateFormat("dd-MM-yyyy").parse(new Scanner(System.in).nextLine());
+        
+        System.out.println("Digueu-me la hora d'arribada del vol (24H): "); h = DADES.nextInt();
+        System.out.println("Digueu-me el minut d'arribada del vol (60min): "); m = DADES.nextInt();
+        horaArribada=LocalTime.of(h, m);
+        
+        milisegonsSortida = dataSortida.getTime();
+        milisegonsSortida = milisegonsSortida + (horaSortida.getHour()*60*60*1000);
+        milisegonsSortida = milisegonsSortida + (horaSortida.getMinute()*60*1000);
+        
+        milisegonsArribada = dataArribada.getTime();
+        milisegonsArribada = milisegonsArribada + (horaArribada.getHour()*60*60*1000);
+        milisegonsArribada = milisegonsArribada + (horaArribada.getMinute()*60*1000);
+        
+        milisegonsDurada = milisegonsArribada - milisegonsSortida;
+        
+        milisegonsDurada = milisegonsDurada/(60*1000); // minuts
+        
+        h = (int)(milisegonsDurada/60);
+        m = (int)(milisegonsDurada%60);
+        
         
         
     }

@@ -126,8 +126,8 @@ public class TripulantCabina {
         System.out.print("\nDigueu-me el passaport: "); passaport = DADES.next();
         System.out.print("\nDigueu-me el nom: "); nom = DADES.nextLine();
         System.out.print("\nDigueu-me l'edat: "); edat = DADES.nextShort();
-        System.out.print("\nDigueu-me les hores i minuts de vol: ");
-        h = DADES.nextInt(); System.out.print(":"); m = DADES.nextInt();
+        System.out.print("\nDigueu-me les hores de vol: "); h = DADES.nextInt();
+        System.out.print("\nDigueu-me les minuts de vol: "); m = DADES.nextInt();
         horesVol = LocalTime.of(h, m);
         System.out.print("\nDigueu-me el rang: "); rang = DADES.next();
         
