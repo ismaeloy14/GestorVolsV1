@@ -123,7 +123,7 @@ public class Avio {
      Retorn: cap
      */
     public void modificarAvio() {
-        Scanner in= new Scanner(System.in);
+        
         String codi, fabricant, model;
         int capacitat, posicioClasses;
         

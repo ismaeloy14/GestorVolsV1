@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author root
  */
 public class RutaNacional {
-    
+    private final static Scanner DADES= new Scanner(System.in);
     private String codi;
     private String pais;
     private String aeroportOri;
@@ -85,15 +85,15 @@ public class RutaNacional {
     paraula, per exemple, El Prat.
      */
     public static RutaNacional novaRutaNacional() {
-       Scanner in= new Scanner(System.in);
+       
         String codi, aeroportOri,aeroportDes,pais;
         double distancia;
         
-        System.out.println("Digueu-me el codi de la ruta nacional: "); codi = in.next();
-        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = in.nextLine();
-        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = in.nextLine();
-        System.out.println("Digueu-me el país: "); pais = in.nextLine();
-        System.out.println("Digueu-me la distància: "); distancia = in.nextDouble();     
+        System.out.println("Digueu-me el codi de la ruta nacional: "); codi = DADES.next();
+        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = DADES.nextLine();
+        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = DADES.nextLine();
+        System.out.println("Digueu-me el país: "); pais = DADES.nextLine();
+        System.out.println("Digueu-me la distància: "); distancia = DADES.nextDouble();     
         
         RutaNacional newRutaNacional = new RutaNacional(codi,pais,aeroportOri,aeroportDes,distancia);
         
@@ -111,7 +111,7 @@ public class RutaNacional {
      Retorn: cap
      */
     public void modificarRutaNacional() {
-        Scanner in= new Scanner(System.in);
+        
         String codi, aeroportOri,aeroportDes,pais;
         double distancia;
         
@@ -119,11 +119,11 @@ public class RutaNacional {
         mostrarRutaNacional();
         System.out.println("");
         System.out.println("VALOS A MODIFICAR");
-        System.out.println("Digueu-me el codi de la ruta nacional: "); codi = in.next();
-        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = in.nextLine();
-        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = in.nextLine();
-        System.out.println("Digueu-me el país origen: "); pais = in.nextLine();
-        System.out.println("Digueu-me la distància: "); distancia = in.nextDouble();
+        System.out.println("Digueu-me el codi de la ruta nacional: "); codi = DADES.next();
+        System.out.println("Digueu-me l'aeroport origen: "); aeroportOri = DADES.nextLine();
+        System.out.println("Digueu-me l'aeroport destí: "); aeroportDes = DADES.nextLine();
+        System.out.println("Digueu-me el país origen: "); pais = DADES.nextLine();
+        System.out.println("Digueu-me la distància: "); distancia = DADES.nextDouble();
         
         setCodi(codi);
         setAeroportOri(aeroportOri);

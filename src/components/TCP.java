@@ -7,13 +7,14 @@ package components;
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.Date;
+import java.util.Scanner;
 
 /**
  *
  * @author root
  */
 public class TCP {
-
+    private final static Scanner DADES= new Scanner(System.in);
     private String passaport;
     private String nom;
     private int edat;

@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author root
  */
 public class Classe {
-      
+    private final static Scanner DADES= new Scanner(System.in);
     private String nom;
     private int capacitat;
     
@@ -59,11 +59,10 @@ public class Classe {
     Retorn: La nova classe.
      */
     public static Classe novaClasse() {
-        Scanner in= new Scanner(System.in);
         String nom;
         int capacitat;
-        System.out.println("Digeu-me el nom de la classe: "); nom = in.nextLine();
-        System.out.println("Digeu-me la capacitat"); capacitat = in.nextInt();
+        System.out.println("Digeu-me el nom de la classe: "); nom = DADES.nextLine();
+        System.out.println("Digeu-me la capacitat"); capacitat = DADES.nextInt();
         Classe newClasse = new Classe(nom,capacitat);
         return newClasse;
     }
@@ -78,7 +77,6 @@ public class Classe {
      Retorn: cap
      */
     public void modificarClasse() {
-        Scanner in= new Scanner(System.in);
         String nom;
         int capacitat;
         
@@ -87,9 +85,9 @@ public class Classe {
         System.out.println("Capacitat de la classe: "+getCapacitat());
         System.out.println("");
         System.out.println("MODIFICACIÓ DE LA CLASSE");
-        System.out.println("Digeu-me el nom de la classe: "); nom = in.nextLine();
+        System.out.println("Digeu-me el nom de la classe: "); nom = DADES.nextLine();
         setNom(nom);
-        System.out.println("Digeu-me la capacitat"); capacitat = in.nextInt();
+        System.out.println("Digeu-me la capacitat"); capacitat = DADES.nextInt();
         setCapacitat(capacitat);
     
         
