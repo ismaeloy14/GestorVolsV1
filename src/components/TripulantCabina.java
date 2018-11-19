@@ -186,7 +186,26 @@ public class TripulantCabina {
      Retorn: número de barres
      */
     public int assignarBarres(String pRang) {
-
+        int barres=0;
+        
+        switch (pRang) {
+            case "enginyer":
+                    barres = 1;
+                break;
+            case "copilot":   
+                if (this.horesVol.getHour()<1500) {
+                    barres = 2;
+                } else {
+                    barres = 3;
+                } 
+                break;
+            case "comandant":
+                    barres = 4;
+                break;
+            default:barres = 0;
+                break;
+        }
+        return barres;
     }
 
     public static Scanner getDADES() {
