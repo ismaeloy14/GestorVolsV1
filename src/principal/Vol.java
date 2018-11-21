@@ -41,7 +41,7 @@ public class Vol {
     /*
      CONSTRUCTOR
      Paràmetres: valors per tots els atributs de la classe menys ruta, tipusRuta, avio,
-     tripulacioCabina, posicioTripulacioCabina, tcp i posicioTCP.
+     tripulacioCabina, posicioTripulacioCabina, tcp, posicioTCP i durada.
      Accions:
      - Assignar als atributs els valors passats com a paràmetres.
      - Inicialitzar ruta i avio a null, ja que quan es crea un vol, encara no s'han
@@ -53,7 +53,7 @@ public class Vol {
      - Inicialitzar els atributs posicioTripulacioCabina i posicioTcps a 0.
      - Inicialitzar l'atribut durada amb el mètode pertinent d'aquesta classe.
      */
-        public Vol(String codi, Date dataSortida, Date dataArribada, LocalTime horaSortida, LocalTime horaArribada, String durada){
+        public Vol(String codi, Date dataSortida, Date dataArribada, LocalTime horaSortida, LocalTime horaArribada){
             this.codi=codi;
             this.ruta=null;
             this.tipusRuta=0;
@@ -66,7 +66,8 @@ public class Vol {
             this.dataArribada=dataArribada;
             this.horaSortida=horaSortida;
             this.horaArribada=horaArribada;
-            this.durada=durada;
+            
+            calcularDurada();
         }
 
     /*
@@ -200,9 +201,7 @@ public class Vol {
         }while((m<0) || (m>59));
         horaArribada=LocalTime.of(h, m);
         
-        //calcularDurada();
-        
-        Vol newVol = new Vol( codi, dataSortida, dataArribada, horaSortida, horaArribada, durada);
+        Vol newVol = new Vol(codi, dataSortida, dataArribada, horaSortida, horaArribada);
         
         return newVol;        
     }
@@ -223,7 +222,7 @@ public class Vol {
      Retorn: cap
      */
     public void modificarVol() throws ParseException {
-        String codi, durada;
+        String codi;
         Date dataSortida, dataArribada;
         LocalTime horaSortida, horaArribada;
         int h, m;
@@ -247,7 +246,7 @@ public class Vol {
             System.out.println("Digueu-me la nova hora de sortida del vol (24H): "); h = DADES.nextInt();
         }while((h<0) || (h>23));
         do{
-        System.out.println("Digueu-me el nou minut de sortida del vol (60min): "); m = DADES.nextInt();
+            System.out.println("Digueu-me el nou minut de sortida del vol (60min): "); m = DADES.nextInt();
         }while((m<0) || (m>59));
         horaSortida=LocalTime.of(h, m);
         
@@ -261,6 +260,15 @@ public class Vol {
             System.out.println("Digueu-me el nou minut d'arribada del vol (60min): "); m = DADES.nextInt();
         }while((m<0) || (m>59));
         horaArribada=LocalTime.of(h, m);
+        
+        // Setters
+        this.setCodi(codi);
+        this.setDataSortida(dataSortida);
+        this.setHoraSortida(horaSortida);
+        this.setDataArribada(dataArribada);
+        this.setHoraSortida(horaArribada);
+        
+        calcularDurada();
         
     }
 
@@ -278,13 +286,13 @@ public class Vol {
         int h, m;
         String durada;
         
-        milisegonsSortida = dataSortida.getTime();
-        milisegonsSortida = milisegonsSortida + (horaSortida.getHour()*60*60*1000);
-        milisegonsSortida = milisegonsSortida + (horaSortida.getMinute()*60*1000);
+        milisegonsSortida = this.dataSortida.getTime();
+        milisegonsSortida = milisegonsSortida + (this.horaSortida.getHour()*60*60*1000);
+        milisegonsSortida = milisegonsSortida + (this.horaSortida.getMinute()*60*1000);
         
-        milisegonsArribada = dataArribada.getTime();
-        milisegonsArribada = milisegonsArribada + (horaArribada.getHour()*60*60*1000);
-        milisegonsArribada = milisegonsArribada + (horaArribada.getMinute()*60*1000);
+        milisegonsArribada = this.dataArribada.getTime();
+        milisegonsArribada = milisegonsArribada + (this.horaArribada.getHour()*60*60*1000);
+        milisegonsArribada = milisegonsArribada + (this.horaArribada.getMinute()*60*1000);
         
         milisegonsDurada = milisegonsArribada - milisegonsSortida;
         
@@ -294,8 +302,8 @@ public class Vol {
         m = (int)(milisegonsDurada%60);
         
         durada= h+" h - "+m+" m";
-        this.durada=durada;
         
+        setDurada(durada);
     }
 
     /*
