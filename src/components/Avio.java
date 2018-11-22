@@ -127,10 +127,8 @@ public class Avio {
         String codi, fabricant, model;
         int capacitat, posicioClasses;
         
-        System.out.println("Codi de l'avió: "+getCodi());
-        System.out.println("Fabricant de l'avió: "+getFabricant());
-        System.out.println("Model de l'avió: "+getModel());
-        System.out.println("Capacitat de l'avió: "+getCapacitat());
+        mostrarAvio();
+        
         System.out.println("");
         System.out.println("MODIFICACIÓ DE L'AVIÓ");
         System.out.println("");

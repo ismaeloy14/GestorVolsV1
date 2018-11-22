@@ -553,8 +553,10 @@ public class Companyia {
         if (posVol!=-1) {
             
             posAvio = seleccionarAvio();
+            
             if (posAvio!=-1) {
                 
+                this.vols[posVol].setAvio(this.avions[posAvio]);
                 
                 
             } else {
@@ -582,6 +584,25 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirTripulantCabinaVol() {
+        int posTripulantCabina, posVol;
+        
+        posVol = seleccionarVol();
+        
+        if (posVol!=-1) {
+            
+            posTripulantCabina = seleccionarTripulantCabina();
+            
+            if (posTripulantCabina!=-1) {
+                
+                this.vols[posVol].afegirTripulantCabina(this.tripulantsCabina[posTripulantCabina]);
+
+            } else {
+                System.out.println("\nNo existeix aquest tripulant de cabina.");
+            }
+            
+        } else {
+            System.out.println("\nNo existeix aquest vol.");
+        }
 
     }
     
@@ -598,7 +619,26 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirTCPVol() {
-  
+        int posTCP, posVol;
+        
+        posVol = seleccionarVol();
+        
+        if (posVol!=-1) {
+            
+            posTCP = seleccionarTCP();
+            
+            if (posTCP!=-1) {
+                
+                this.vols[posVol].afegirTCP(this.tcps[posTCP]);
+
+            } else {
+                System.out.println("\nNo existeix aquest tripulant de cabina de passatgers.");
+            }
+            
+        } else {
+            System.out.println("\nNo existeix aquest vol.");
+        }
+
     }
 
     /*
@@ -619,9 +659,31 @@ public class Companyia {
      Retorn: cap
      */
     public void afegirRutaVol(int tipus) {
+        int posRuta=-1, posVol;
+        
+        posVol = seleccionarVol();
+        
+        if (posVol!=-1) {
+            
+            switch (tipus) {
+                case 1:  posRuta = seleccionarRutaNacional();       break;
+                case 2:  posRuta = seleccionarRutaInternacional();  break;
+                case 3:  posRuta = seleccionarRutaIntercontinental();break;
+                case 4:  posRuta = seleccionarRutaTransoceanica();  break;
+            }
+            
+            if (posRuta!=-1) {
+                
+                this.vols[posVol].setRuta(posRuta);
+
+            } else {
+                System.out.println("\nNo existeix aquesta ruta.");
+            }
+            
+        } else {
+            System.out.println("\nNo existeix aquest vol.");
+        }
     
     }
-
-    
 
 }
